@@ -4,8 +4,6 @@ const app = express();
 
 app.set("view engine", "ejs");
 
-// jako vychozi route je nastaveno
-// pro articles /articles (ne /)
 app.use("/articles", articleRouter);
 
 app.get("/", (req, res) => {
