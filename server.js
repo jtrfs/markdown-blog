@@ -4,6 +4,8 @@ const app = express();
 
 app.set("view engine", "ejs");
 
+// jako vychozi route je nastaveno
+// pro articles /articles (ne /)
 app.use("/articles", articleRouter);
 
 app.get("/", (req, res) => {
@@ -19,7 +21,7 @@ app.get("/", (req, res) => {
       description: "Test description 2"
     }
   ];
-  res.render("index", { articles: articles });
+  res.render("articles/index", { articles: articles });
 });
 
 app.listen(5000);
